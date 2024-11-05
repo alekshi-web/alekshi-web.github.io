@@ -1,208 +1,132 @@
-/* Размер страницы для печати A4 */
-@page {
-    size: A4;
-    margin: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-image: url("photo/paper.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 20px;
-    hyphens: auto;
-}
-
-/* Шапка и логотипы */
-.header {
-    position: relative;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.header img.left-corner {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 250px;
-    height: auto;
-}
-
-.header img.right-corner {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 250px;
-    height: auto;
-}
-
-h1 {
-    font-family: 'fantasy', fantasy;
-    font-size: 4em;
-    text-align: center;
-    color: #000000;
-    text-transform: uppercase;
-    margin-bottom: 0;
-}
-
-h2 {
-    font-family: 'fantasy', fantasy;
-    font-size: 2.5em;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
-    margin-top: 0;
-    letter-spacing: 3px;
-}
-
-h3 {
-    font-family: 'fantasy', fantasy;
-    font-size: 25px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
-    margin-top: 0;
-    letter-spacing: 1px;
-    border-left: 5px solid #6c1a1a;
-    margin: 20px 0;
-}
-
-.wanted {
-    column-count: 3;
-    column-gap: 40px;
-    font-size: 1.2em;
-    line-height: 1.6;
+  font-family: "JetBrains Mono", monospace;
+  background: #404040;
+  color: #363e45;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  width: 1440px;
+  margin: 0 auto;
+  padding: 150px;
+  background: #ffffff;
+  border-radius: 2px;
 }
 
-p::first-letter {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #6c1a1a;
-    line-height: 1;
-    margin-right: 0.1px;
-    vertical-align: text-top;
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  background-color: #fff;
+  position: relative;
+}
+
+.Image_mancomp {
+  background-image: url("image.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.menu button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background-color: #ddd;
+}
+
+main {
+  margin-top: 150px;
+}
+
+.intro h1,
+.intro h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.education-block,
+.skills-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.education-item,
+.skill {
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.progress {
+  height: 20px;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+.contacts-container {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.social-media {
+  display: flex;
+  gap: 15px;
 }
 
 footer {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1em;
-    color: #000;
-}
-
-.main-image {
-    width: 100%;
-    height: auto;
-    margin: 20px 0;
-}
-
-.columns {
-    column-count: 2;
-    column-gap: 40px;
-    font-size: 1.2em;
-    line-height: 1.6;
-}
-
-.advertisement {
-    column-count: 1;
-    column-gap: 40px;
-    font-size: 1.2em;
-    line-height: 1.6;
-}
-.last{
-    column-count: 1;
-    column-gap: 40px;
-    font-size: 20px;
-    line-height: 1.6;
-    color: #000000;
-}
-
-.wide-image {
-    width: 300px;
-    margin: 5px 0;
-    height: 270px;
-}
-
-figure {
-    display: block;
-    page-break-inside: avoid;
-    break-inside: avoid;
-    margin-bottom: 20px;
-}
-
-figcaption {
-    text-align: center;
-    font-style: italic;
-    margin-top: 5px;
-}
-
-.quote {
-    font-family: 'fantasy', fantasy;
-    font-size: 1.5em;
-    text-align: center;
-    color: #000000;
-    font-style: italic;
-    padding: 10px;
-    border-left: 5px solid #6c1a1a;
-    margin: 20px 0;
-}
-
-.vertical-text {
-    font-size: 17px;
-    line-height: 1.52;
-    margin: 10px 0;
-    padding: 3px;
-    display: inline-block;
-    white-space: nowrap;
-}
-
-/* Анимация исчезновения */
-@keyframes fadeOut {
-    100% {
-        opacity: 1;
-    }
-    70% {
-        opacity: 0;
-    }
-}
-
-.fade-out {
-    animation: fadeOut 7s forwards;
-}
-
-@media (max-width: 768px) {
-    .columns {
-        column-count: 1;
-    }
-
-    .header img.left-corner,
-    .header img.right-corner {
-        width: 100px;
-        height: auto;
-    }
-
-    .main-image {
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 50px;
-    }
-
-    h2 {
-        font-size: 25px;
-    }
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px 0;
 }
