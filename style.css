@@ -1,132 +1,194 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Размер страницы для печати A4 */
+@page {
+    size: A4;
+    margin: 0;
 }
 
 body {
-  font-family: "JetBrains Mono", monospace;
-  background: #404040;
-  color: #363e45;
+    background-image: url("photo/paper.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 20px;
+    hyphens: auto;
 }
 
 .container {
-  width: 1440px;
-  margin: 0 auto;
-  padding: 150px;
-  background: #ffffff;
-  border-radius: 2px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Шапка и логотипы */
+.header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 0;
-  background-color: #fff;
-  position: relative;
+.header img.left-corner {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 200px;
 }
 
-.Image_mancomp {
-  background-image: url("image.png");
-  background-size: cover;
-  background-position: center;
+.header img.right-corner {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 200px;
 }
 
-.menu {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 20px;
+h1 {
+    font-family: 'fantasy', fantasy;
+    font-size: 4em;
+    text-align: center;
+    color: #000000;
+    text-transform: uppercase;
+    margin-bottom: 0;
 }
 
-.menu button {
-  padding: 10px 20px;
-  background-color: #f0f0f0;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+h2 {
+    font-family: 'fantasy', fantasy;
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 0;
+    letter-spacing: 3px;
 }
 
-.menu button:hover {
-  background-color: #ddd;
+h3 {
+    font-family: 'fantasy', fantasy;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 20px 0;
+    letter-spacing: 1px;
+    border-left: 5px solid #6c1a1a;
 }
 
-main {
-  margin-top: 150px;
+/* Адаптивные колонки */
+.columns {
+    column-count: 3;
+    column-gap: 40px;
+    font-size: 1.2em;
+    line-height: 1.6;
 }
 
-.intro h1,
-.intro h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.advertisement {
+    column-count: 2;
+    column-gap: 40px;
+    font-size: 1.2em;
+    line-height: 1.6;
 }
 
-.profile-image {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  height: auto;
+.wanted {
+    column-count: 3;
+    column-gap: 40px;
+    font-size: 1.2em;
+    line-height: 1.6;
 }
 
-.education-block,
-.skills-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.last {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #000000;
 }
 
-.education-item,
-.skill {
-  margin-bottom: 10px;
+.main-image {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
 }
 
-.progress-bar {
-  width: 100%;
-  background-color: #ddd;
-  border-radius: 5px;
+/* Анимация исчезновения */
+@keyframes fadeOut {
+    100% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
 }
 
-.progress {
-  height: 20px;
-  background-color: #4caf50;
-  border-radius: 5px;
+.fade-out {
+    animation: fadeOut 7s forwards;
 }
 
-.contacts-container {
-  display: flex;
-  gap: 20px;
+figure {
+    display: block;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 20px;
 }
 
-.contact-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1024px) {
+    .columns, .advertisement, .wanted {
+        column-count: 2;
+    }
+    
+    .header img.left-corner,
+    .header img.right-corner {
+        width: 150px;
+    }
+    
+    h1 {
+        font-size: 3em;
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
 }
 
-.contact-info {
-  display: flex;
-  flex-direction: column;
+@media (max-width: 768px) {
+    .columns, .advertisement, .wanted {
+        column-count: 1;
+    }
+    
+    .main-image {
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+    }
 }
 
-.icon {
-  font-size: 24px;
-}
-
-.social-media {
-  display: flex;
-  gap: 15px;
-}
-
-footer {
-  margin-top: 40px;
-  text-align: center;
-  padding: 20px 0;
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .header img.left-corner,
+    .header img.right-corner {
+        width: 100px;
+    }
+    
+    .main-image {
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
 }
